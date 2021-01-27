@@ -11,9 +11,12 @@
 //             'You logged into a secure area!');
 //     });
 // });
+const { addFeature } = require('@wdio/allure-reporter').default
+
 describe('TestJSSummit Login test', () => {
     it('should be able to login in', () => {
-        browser.url(`https://react-redux.realworld.io/#/login`)
+        addFeature('Login')
+        browser.url(`/#/login`)
         $('input[type="email"]').setValue('testjssummit@gmail.com')
         $('input[type="password"]').setValue('password')
         $('button[type="submit"]').click()
